@@ -40,6 +40,8 @@ function KareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
 }
 
+console.log(KareninAlani(10));
+
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* GÖREV 1:  
@@ -50,9 +52,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2 * pi * yaricap;
 }
+
+console.log(CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,8 +68,8 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+  return pi * Math.pow(yaricap, 2);
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -99,27 +103,56 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+for (let i = 0; i < sayilar.length; i++) {
+  if (i == 0) {
+    enkucuk = sayilar[i];
+    enbuyuk = sayilar[i];
+  } else {
+    if (sayilar[i] < enkucuk) {
+      enkucuk = sayilar[i];
+    }
+    if (sayilar[i] > enbuyuk) {
+      enbuyuk = sayilar[i];
+    }
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach((item) => {
+  if (item % 3 == 0) {
+    ucetambolunenler.push(item);
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc, item) => acc + item, 0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((item) => item < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+for (let i = 0; i < sayilar.length; i++) {
+  let sayi = sayilar[i];
+  let sayiAdedi = 0;
+  for (let j = 0; j < sayilar.length; j++) {
+    if (sayilar[j] == sayi) {
+      sayiAdedi++;
+    }
+  }
+  if (sayiAdedi > 1) {
+    tekraredensayilar.push(
+      `${sayi} sayısı ${sayiAdedi} kere tekrar edilmiştir`
+    );
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
